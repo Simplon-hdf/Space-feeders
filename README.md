@@ -24,9 +24,9 @@
 #### Définition
   - Transport Layer Security anciennement appelé Secure Socket Layer (SSL) est un protocole cryptographique conçu pour fournir une communications sécurisé sur un réseau informatique.
   - TLS permet de garantir 3 propriété de sécurité, 
-    - `Confidentialité` : C'est à dire personne d'autre ne peut lire la communication parce que elle est chiffré.
+    - `Confidentialité` : Personne d'autre ne peut lire la communication parce que elle est chiffré.
     - `Authenticité` : L'identité des participants à la communication peut être vérifier.
-    - `intégrité` : les messages de la communication ne peuvent pas être modifiées en route par un adversaire.
+    - `intégrité` : Les messages de la communication ne peuvent pas être modifiées en route par un adversaire.
 #### Recommandations
   - R1 - Recommandations de sécurité relatives à TLS: 
     - Il est nécessaire de mettre en œuvre les Recommandations de sécurité relatives à TLS
