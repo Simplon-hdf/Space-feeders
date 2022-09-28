@@ -331,7 +331,7 @@ nécessité d’être traité par un code exécuté sur le navigateur, l’attri
 
   #### Définition
   - Il s'agit d'une attaque de site Web courante qui est capable d'affecter le site Web ainsi que les utilisateurs du site Web. Les attaquants utilisent couramment JavaScript pour écrire du code malveillant dans XSS. Le code peut voler les détails des cookies de l'utilisateur , modifier les paramètres de l'utilisateur, afficher divers téléchargements de logiciels malveillants et bien d'autres.
-  - Comment puis-je empêcher XSS en PHP ? Filtrez vos entrées avec une liste blanche de caractères autorisés et utilisez des indications de type ou un casting de type. Échappez vos sorties avec des *** htmlentities *** et  ***ENT_QUOTES******  pour les contextes HTML, ou des échappements JavaScript Unicode pour les contextes JavaScript.
+  - Comment puis-je empêcher XSS en PHP ? Filtrez vos entrées avec une liste blanche de caractères autorisés et utilisez des indications de type ou un casting de type. Échappez vos sorties avec des **htmlentities** et  **ENT_QUOTES**  pour les contextes HTML, ou des échappements JavaScript Unicode pour les contextes JavaScript.
   #### Recommandations
   - R4 - Utiliser l'API DOM à bon escient
     - Toute intervention sur le contenu client doit être réalisée via l’API DOM. Il est recom￾mandé de ne pas utiliser, ou à défaut de contrôler l’usage de méthodes et propriétés
