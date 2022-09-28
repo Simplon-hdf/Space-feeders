@@ -78,7 +78,7 @@
     par un attaquant.
   - R3 - Surveiller les CT logs
     - Il est recommandé que l’hébergeur ou le responsable d’un site web mette en œuvre
-    un processus de surveillance des Certificate Transparency logs afin de détecter et révo￾quer les certificats illégitimes qui correspondent à des domaines sous son contrôle.
+    un processus de surveillance des Certificate Transparency logs afin de détecter et révoquer les certificats illégitimes qui correspondent à des domaines sous son contrôle.
 
 </details>
 
@@ -168,9 +168,9 @@
   #### Recommandations
   - R39 - Mettre en œuvre un preflight lors des appels COR
     - Si les données transmises par un appel CORS présentent un caractère sensible, il est
-    recommandé qu’un preflight soit prévu côté serveur et forcé côté client afin de li￾miter le risque de fuite d’informations. Un preflight peut être forcé par la présence, à vérifier, d’un en-tête non standard dans chaque requête CORS
+    recommandé qu’un preflight soit prévu côté serveur et forcé côté client afin de limiter le risque de fuite d’informations. Un preflight peut être forcé par la présence, à vérifier, d’un en-tête non standard dans chaque requête CORS
   - R40 - Vérifier la valeur de l'Origin lors de la réception d'une requête CORS
-    - L’en-tête Origin, dont la falsification est empêchée par le navigateur, doit être con￾trôlé par l’application avec une liste d’Origins autorisées pour réduire le risque CSRF via CORS.
+    - L’en-tête Origin, dont la falsification est empêchée par le navigateur, doit être contrôlé par l’application avec une liste d’Origins autorisées pour réduire le risque CSRF via CORS.
   - R41 - Cloisonner les services web au moyen de noms de domaines distincts
     - Lors de la mise en place de plusieurs WebServices indépendants, il est recommandé de dédier un domaine à chacun d’entre eux.
   - R42 - Éviter l'usage de bibliothèques publiques effectuant des appels CORS
@@ -196,7 +196,7 @@
   </summary>
 
   #### Définition
-  - permet de définir une stratégie de contrôle des accès aux ressources atteignables d’un site web donné par l’application de restrictions sous forme de liste d’au￾torisations (aussi appelée liste blanche).
+  - permet de définir une stratégie de contrôle des accès aux ressources atteignables d’un site web donné par l’application de restrictions sous forme de liste d’autorisations (aussi appelée liste blanche).
   - Le principal avantage de définir une Content Security Policy (CSP) est de détecter et d’atténuer les attaques XSS.
   - Elle utilise des méta-éléments ou des en-têtes pour donner le feu vert ou bloquer le contenu chargé sur votre site web.
   - Pour activer CSP, vous devez configurer vos serveurs web afin d'ajouter un en-tête (header) HTTP Content-Security-Policy aux réponses. 
@@ -262,17 +262,17 @@
   </summary>
 
   #### Définition
-  - Est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est au￾thentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
+  - Est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est authentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
   vers un site de confiance, mais vulnérable au CSRF (un mécanisme d’authentification faible qui repose uniquement sur les cookies pour gérer les sessions des utilisateurs).
   - pour se protéger des attaques cross-site request forgery : La méthode recommandée et la plus largement adoptée pour lutter contre les attaques cross-site request forgery consiste à utiliser un token anti-CSRF, ou token de synchronisation qui sera géneré aléatoirement en session par le serveur.
 
   
   #### Recommandations
   - R7 - Vérifier l'échappement des contenus inclus
-    - Les données externes employées dans quelque partie que ce soit de la réponse en￾voyée au navigateur doivent avoir fait l’objet d’un « échappement » adapté au con￾texte d’interprétation.
+    - Les données externes employées dans quelque partie que ce soit de la réponse envoyée au navigateur doivent avoir fait l’objet d’un « échappement » adapté au contexte d’interprétation.
   - R8 - Vérifier la conformité des données issues de sources externes
     - Il est recommandé de vérifier, chaque fois que c’est possible, que les données ont
-      bien la forme attendue. Lorsque cela est possible, une approche par liste d’autori￾sations est recommandée : par exemple une donnée censée être numérique ne doit
+      bien la forme attendue. Lorsque cela est possible, une approche par liste d’autorisations est recommandée : par exemple une donnée censée être numérique ne doit
       être composée que de chiffres.
 
 </details>
@@ -302,17 +302,17 @@
     est recommandé de ne pas stocker des informations sensibles dans les cookies. Leur
     utilisation n’est souhaitable que pour le stockage temporaire d’informations de faible volume, pour lesquelles la perte ou la divulgation sera sans conséquence.
   - R27 - Cloisonner les sessions au moyen de noms de domaine distincts
-    - Afin d’éviter qu’un cookie ne soit envoyé par correspondance involontaire sur l’at￾tribut Domain avec le domaine ou sous-domaine en question, il est recommandé de répartir les périmètres de responsabilité d’une application web sur des domaines dif￾férents.
+    - Afin d’éviter qu’un cookie ne soit envoyé par correspondance involontaire sur l’attribut Domain avec le domaine ou sous-domaine en question, il est recommandé de répartir les périmètres de responsabilité d’une application web sur des domaines différents.
   - R28 - Définir le path d'un cookie
     - Il est recommandé de restreindre la portée des cookies en suivant le principe de
-moindre privilège. Le path de chaque cookie doit être ajusté au découpage hiérar￾chique du site web et à la sensibilité du cookie.
+moindre privilège. Le path de chaque cookie doit être ajusté au découpage hiérarchique du site web et à la sensibilité du cookie.
   - R29 - Maîtriser l'accès aux cookies en JavaScript
     - Dès lors qu’un cookie n’a d’usage que pour le serveur d’applications ou n’a pas la
 nécessité d’être traité par un code exécuté sur le navigateur, l’attribut HttpOnly doit être utilisé afin de limiter le risque de vol par un code JavaScript.
   - R30 - Proscrire l'accès en JavaScript à un cookie de session
     - Pour un cookie de session, il est nécessaire de positionner l’attribut HttpOnly.
   - R31 - Limiter le transit des cookies aux flux sécurisés
-    - Dès lors que des cookies sont nécessaires et que le site ou l’application n’est accessi￾ble qu’en HTTPS, le flag Secure doit être utilisé.
+    - Dès lors que des cookies sont nécessaires et que le site ou l’application n’est accessible qu’en HTTPS, le flag Secure doit être utilisé.
   - R32 -  Définir une stratégie stricte d'envoi des cookies en cross-site.
     - Dès qu’un cookie n’a pas de raison d’être émis lors de la navigation depuis un site
     web extérieur, définir l’attribut SameSite à Strict. Dans le cas contraire, utiliser la valeur Lax si le cookie n’autorise pas d’action privilégiée via la méthode HTTP GET.
@@ -334,7 +334,7 @@ nécessité d’être traité par un code exécuté sur le navigateur, l’attri
   - Comment puis-je empêcher XSS en PHP ? Filtrez vos entrées avec une liste blanche de caractères autorisés et utilisez des indications de type ou un casting de type. Échappez vos sorties avec des **htmlentities** et  **ENT_QUOTES**  pour les contextes HTML, ou des échappements JavaScript Unicode pour les contextes JavaScript.
   #### Recommandations
   - R4 - Utiliser l'API DOM à bon escient
-    - Toute intervention sur le contenu client doit être réalisée via l’API DOM. Il est recom￾mandé de ne pas utiliser, ou à défaut de contrôler l’usage de méthodes et propriétés
+    - Toute intervention sur le contenu client doit être réalisée via l’API DOM. Il est recommandé de ne pas utiliser, ou à défaut de contrôler l’usage de méthodes et propriétés
     qui effectuent des substitutions ou modifications de contenu dans un contexte à
     même d’altérer le comportement de l’application web.
   - R5 - Dissocier clairement la composition des pages web
@@ -348,13 +348,13 @@ d’occurrence de vulnérabilités XSS.
     JavaScript. L’usage de cette fonction doit être proscrit
   - R10 - Proscrire l'usage de constructions basées sur l'évaluation de code
     - Interdire l’usage des constructions JavaScript dont l’interprétation des paramètres
-  peut aboutir sur de l’exécution de code arbitraire. Des exemples de telles construc￾tions sont setInterval et setTimeout avec une chaîne de caractères en paramètre,
+  peut aboutir sur de l’exécution de code arbitraire. Des exemples de telles constructions sont setInterval et setTimeout avec une chaîne de caractères en paramètre,
   le constructeur Function('code'), ou encore la méthode .constructor('code')
   du prototype d’une fonction.
   - R11 - Contrôler l'intégrité des contenus internes
     - Il est recommandé de mettre en œuvre SRI pour les ressources JavaScript et CSS internes.
   - R12 - Contrôler l'intégrité des contenus tiers
-    - Dans le cas d’un site en HTTPS, il est recommandé de mettre en œuvre systéma￾tiquement le contrôle de l’intégrité des ressources via SRI afin de réduire le risque de vulnérabilité XSS, en particulier pour les contenus issus d’un CDN.
+    - Dans le cas d’un site en HTTPS, il est recommandé de mettre en œuvre systématiquement le contrôle de l’intégrité des ressources via SRI afin de réduire le risque de vulnérabilité XSS, en particulier pour les contenus issus d’un CDN.
 
 </details>
 
