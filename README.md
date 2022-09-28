@@ -5,10 +5,10 @@
  2. [Définitions et recommandations](#définitions-et-recommandations)
  3. [Notre application](#notre-application)
  4. [Sources](#sources)
+
 ## Introduction
+
 <!-- Notre introduction en anglais -->
-
-
 
 ## Définitions et recommandations
 
@@ -37,6 +37,7 @@
 </details>
 
  -->
+ 
 <details>
   <summary>
 
@@ -108,7 +109,6 @@
 
 </details>
  
-
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
@@ -117,6 +117,7 @@
 
 ### Serveur (Métier)
 ### BDD (Données)
+
 ## Sources
 
 - Guide ANSSI: RECOMMANDATIONS POUR LA MISE EN ŒUVRE D'UN SITE WEB : MAÎTRISER LES STANDARDS DE SÉCURITÉ CÔTÉ NAVIGATEUR:
@@ -125,4 +126,3 @@
   https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/pdf/6e056f88-eef5-489c-85fe-57c1c58fb165.pdf
 - Guide RGPD CNIL de l'équipe de développement
   https://lincnil.github.io/Guide-RGPD-du-developpeur/
-
