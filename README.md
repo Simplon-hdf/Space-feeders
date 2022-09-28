@@ -15,7 +15,8 @@
 <!-- Liste des termes avec définition, recommandations, exemples, couche ntier -->
 <details>
 
-### Transport Layer Security (TLS)
+<summary>Transport Layer Security (TLS)</summary>
+
 #### Définition
   - Transport Layer Security anciennement appelé Secure Socket Layer (SSL) est un protocole cryptographique conçu pour fournir une communications sécurisé sur un réseau informatique.
   - TLS permet de garantir 3 propriété de sécurité, 
