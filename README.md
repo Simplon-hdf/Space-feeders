@@ -165,6 +165,26 @@
 ```
 ![This operation performs a simple exchange between the client and the server, using CORS headers to handle the privileges:](images/simple-req.png)
 
+  #### Recommandations
+  - R39 - Mettre en œuvre un preflight lors des appels COR
+    - Si les données transmises par un appel CORS présentent un caractère sensible, il est
+    recommandé qu’un preflight soit prévu côté serveur et forcé côté client afin de li￾miter le risque de fuite d’informations. Un preflight peut être forcé par la présence, à vérifier, d’un en-tête non standard dans chaque requête CORS
+  - R40 - Vérifier la valeur de l'Origin lors de la réception d'une requête CORS
+    - L’en-tête Origin, dont la falsification est empêchée par le navigateur, doit être con￾trôlé par l’application avec une liste d’Origins autorisées pour réduire le risque CSRF via CORS.
+  - R41 - Cloisonner les services web au moyen de noms de domaines distincts
+    - Lors de la mise en place de plusieurs WebServices indépendants, il est recommandé de dédier un domaine à chacun d’entre eux.
+  - R42 - Éviter l'usage de bibliothèques publiques effectuant des appels CORS
+    - Une bibliothèque JavaScript dont le code est obscurci afin de bloquer son analyse,
+    mais effectuant des appels CORS ne doit pas être incluse dans les ressources d’une application web.
+  - R42- -Isoler l'utilisation de bibliothèques publiques effectuant des appels CORS.
+    - A défaut de pouvoir contrôler le code JavaScript d’une bibliothèque effectuant un
+    appel CORS, celle-ci doit être isolée du reste de l’application via un Web Worker ou, à défaut, une iframe.
+  - R43 - Anonymiser le chargement des ressources en cross-origin
+    - Dans le but de limiter l’exposition des authentifiants et pour préserver la confidentialité des utilisateurs, il est recommandé de positionner l’attribut crossorigin à anonymous pour les ressources dont la récupération ne nécessite pas d’authentificaion.
+  - R44 - Préférer l'utilisation de l'API Fetch à XMLHttpRequest
+    - Dans la mesure du possible, l’utilisation de l’API Fetch est recommandée par rapport à XMLHttpRequest
+
+
 </details>
 
 
@@ -186,6 +206,33 @@
     http-equiv="Content-Security-Policy"
     content="default-src 'self'; img-src https://*; child-src 'none';" />
 ``` 
+ #### Recommandations
+  - R5 - Dissocier clairement la composition des pages web
+    - Il est recommandé de dissocier clairement les données (JSON), la structure (HTML),
+      le style (CSS) et la logique (JavaScript) d’une page web afin de réduire le risque
+      d’occurrence de vulnérabilités XSS.
+  - R6 - Expliciter la nature d'une ressource avec l'en-tête Content-Type
+    - L’application de la recommandation R5 permet aussi de spécifier de manière explicite
+      la nature d’un contenu et donc le contexte dans lequel le navigateur peut l’utiliser.
+      Spécifier un Content-Type approprié contribue à réduire le risque qu’une ressource
+      soit interprétée de manière inattendue et exploitée par un attaquant.
+  - R13 - Restreindre les contenus aux ressources fiables
+    - Il est recommandé de mettre en œuvre CSP afin de présenter aux navigateurs une
+    liste des sites reconnus comme présentant des ressources fiables et ainsi contribuer
+    au principe de moindre privilège en réduisant le risque potentiel de vulnérabilité XSS.
+  - R14 - Mettre en œuvre CSP par en-tête HTTP
+    - Il est recommandé de privilégier la mise en œuvre de CSP par l’utilisation de l’en-tête
+    HTTP Content-Security-Policy.
+  - R14- - Mettre en œuvre CSP par balise meta dans les pages HTML
+    - Si cela n’est pas possible via en-tête, ou dans des cas particuliers d’affermissement
+    d’une stratégie, il est recommandé de mettre en œuvre CSP dans les pages HTML par l’utilisation de la balise HTML <meta>.
+  - R15 - Interdire des contenus inline 
+    - Les contraintes CSP ne doivent pas présenter les mots-clés suivants : data:, 'unsafe-eval' ou 'unsafe-inline'.
+  - R16 - Définir la directive default-src
+    - Lors de l’élaboration d’une CSP, il est recommandé de veiller à ce qu’elle contienne
+    au moins la directive default-src, et que celle-ci ne soit pas simplement positionnée à « * ».
+
+
 </details>
 
 <details>
@@ -205,12 +252,6 @@
 -- Après avoir cliqué sur le bouton de connexion, la requête SQL fonctionnera comme suit :
 "SELECT Count(*) FROM Users WHERE Username=' admin ' AND Password=' anything 'or'1'='1 ' ";
 ```
-  
-  #### Recommandations
-  - R1 - title of recommandation
-    - Content
-  - R2
-    - Content
 
 </details>
 <details>
@@ -221,16 +262,18 @@
   </summary>
 
   #### Définition
-  - est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est au￾thentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
+  - Est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est au￾thentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
   vers un site de confiance, mais vulnérable au CSRF (un mécanisme d’authentification faible qui repose uniquement sur les cookies pour gérer les sessions des utilisateurs).
   - pour se protéger des attaques cross-site request forgery : La méthode recommandée et la plus largement adoptée pour lutter contre les attaques cross-site request forgery consiste à utiliser un token anti-CSRF, ou token de synchronisation qui sera géneré aléatoirement en session par le serveur.
 
   
   #### Recommandations
-  - R1 - title of recommandation
-    - Content
-  - R2
-    - Content
+  - R7 - Vérifier l'échappement des contenus inclus
+    - Les données externes employées dans quelque partie que ce soit de la réponse en￾voyée au navigateur doivent avoir fait l’objet d’un « échappement » adapté au con￾texte d’interprétation.
+  - R8 - Vérifier la conformité des données issues de sources externes
+    - Il est recommandé de vérifier, chaque fois que c’est possible, que les données ont
+      bien la forme attendue. Lorsque cela est possible, une approche par liste d’autori￾sations est recommandée : par exemple une donnée censée être numérique ne doit
+      être composée que de chiffres.
 
 </details>
 
@@ -254,31 +297,28 @@
   Set-Cookie: <nom-du-cookie>=<valeur-du-cookie>
 ```
   #### Recommandations
-  - R1 - title of recommandation
-    - Content
-  - R2
-    - Content
+  - R26 - Ne pas stocker d'informations sensibles dans les cookies
+    - Dans le cadre de la défense en profondeur et à l’exception des jetons de session, il
+    est recommandé de ne pas stocker des informations sensibles dans les cookies. Leur
+    utilisation n’est souhaitable que pour le stockage temporaire d’informations de faible volume, pour lesquelles la perte ou la divulgation sera sans conséquence.
+  - R27 - Cloisonner les sessions au moyen de noms de domaine distincts
+    - Afin d’éviter qu’un cookie ne soit envoyé par correspondance involontaire sur l’at￾tribut Domain avec le domaine ou sous-domaine en question, il est recommandé de répartir les périmètres de responsabilité d’une application web sur des domaines dif￾férents.
+  - R28 - Définir le path d'un cookie
+    - Il est recommandé de restreindre la portée des cookies en suivant le principe de
+moindre privilège. Le path de chaque cookie doit être ajusté au découpage hiérar￾chique du site web et à la sensibilité du cookie.
+  - R29 - Maîtriser l'accès aux cookies en JavaScript
+    - Dès lors qu’un cookie n’a d’usage que pour le serveur d’applications ou n’a pas la
+nécessité d’être traité par un code exécuté sur le navigateur, l’attribut HttpOnly doit être utilisé afin de limiter le risque de vol par un code JavaScript.
+  - R30 - Proscrire l'accès en JavaScript à un cookie de session
+    - Pour un cookie de session, il est nécessaire de positionner l’attribut HttpOnly.
+  - R31 - Limiter le transit des cookies aux flux sécurisés
+    - Dès lors que des cookies sont nécessaires et que le site ou l’application n’est accessi￾ble qu’en HTTPS, le flag Secure doit être utilisé.
+  - R32 -  Définir une stratégie stricte d'envoi des cookies en cross-site.
+    - Dès qu’un cookie n’a pas de raison d’être émis lors de la navigation depuis un site
+    web extérieur, définir l’attribut SameSite à Strict. Dans le cas contraire, utiliser la valeur Lax si le cookie n’autorise pas d’action privilégiée via la méthode HTTP GET.
+  - R33 -  Définir une stratégie stricte d'envoi des cookies de session en cross-site
+    - Pour un cookie de session, l’attribut SameSite doit être défini et ne doit pas être positionné à None.
 
-</details>
-
-
-<details>
-  <summary>
-
-  ### Cross-Site Request Forgery (CSRF) 
-  
-  </summary>
-
-  #### Définition
-  - Est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est au￾thentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
-  vers un site de confiance, mais vulnérable au CSRF (un mécanisme d’authentification faible qui repose uniquement sur les cookies pour gérer les sessions des utilisateurs).
-  - pour se protéger des attaques cross-site request forgery : La méthode recommandée et la plus largement adoptée pour lutter contre les attaques cross-site request forgery consiste à utiliser un token anti-CSRF, ou token de synchronisation qui sera géneré aléatoirement en session par le serveur.
-  
-  #### Recommandations
-  - R1 - title of recommandation
-    - Content
-  - R2
-    - Content
 
 </details>
 
@@ -293,10 +333,28 @@
   - Il s'agit d'une attaque de site Web courante qui est capable d'affecter le site Web ainsi que les utilisateurs du site Web. Les attaquants utilisent couramment JavaScript pour écrire du code malveillant dans XSS. Le code peut voler les détails des cookies de l'utilisateur , modifier les paramètres de l'utilisateur, afficher divers téléchargements de logiciels malveillants et bien d'autres.
   - Comment puis-je empêcher XSS en PHP ? Filtrez vos entrées avec une liste blanche de caractères autorisés et utilisez des indications de type ou un casting de type. Échappez vos sorties avec des *** htmlentities *** et  ***ENT_QUOTES******  pour les contextes HTML, ou des échappements JavaScript Unicode pour les contextes JavaScript.
   #### Recommandations
-  - R1 - title of recommandation
-    - Content
-  - R2
-    - Content
+  - R4 - Utiliser l'API DOM à bon escient
+    - Toute intervention sur le contenu client doit être réalisée via l’API DOM. Il est recom￾mandé de ne pas utiliser, ou à défaut de contrôler l’usage de méthodes et propriétés
+    qui effectuent des substitutions ou modifications de contenu dans un contexte à
+    même d’altérer le comportement de l’application web.
+  - R5 - Dissocier clairement la composition des pages web
+    - Il est recommandé de dissocier clairement les données (JSON), la structure (HTML),
+le style (CSS) et la logique (JavaScript) d’une page web afin de réduire le risque
+d’occurrence de vulnérabilités XSS.
+
+ #### Recommandations
+  - R9 - Proscrire l'usage de la fonction eval()
+    - La fonction eval est dédiée à la transformation de chaîne de caractères en code
+    JavaScript. L’usage de cette fonction doit être proscrit
+  - R10 - Proscrire l'usage de constructions basées sur l'évaluation de code
+    - Interdire l’usage des constructions JavaScript dont l’interprétation des paramètres
+  peut aboutir sur de l’exécution de code arbitraire. Des exemples de telles construc￾tions sont setInterval et setTimeout avec une chaîne de caractères en paramètre,
+  le constructeur Function('code'), ou encore la méthode .constructor('code')
+  du prototype d’une fonction.
+  - R11 - Contrôler l'intégrité des contenus internes
+    - Il est recommandé de mettre en œuvre SRI pour les ressources JavaScript et CSS internes.
+  - R12 - Contrôler l'intégrité des contenus tiers
+    - Dans le cas d’un site en HTTPS, il est recommandé de mettre en œuvre systéma￾tiquement le contrôle de l’intégrité des ressources via SRI afin de réduire le risque de vulnérabilité XSS, en particulier pour les contenus issus d’un CDN.
 
 </details>
 
