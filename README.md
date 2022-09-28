@@ -83,6 +83,32 @@
 </details>
 
 
+<details>
+  <summary>
+
+  ### HTTP Strict Trransort Security (HSTS)
+  
+  </summary>
+
+  #### Définition
+  - indique au navigateur d’utiliser automatiquement HTTPS pour tous les accès au site web.
+  - HSTS permet à un site Web d'informer le navigateur qu'il ne doit jamais charger le site à l'aide de HTTP et qu'il doit automatiquement convertir toutes les tentatives d'accès au site à l'aide de HTTP en requêtes HTTPS.
+  - Demander au navigateur d’utiliser exclusivement HTTPS pour se connecter au site
+    visité et à ses sous-domaines, pour une durée d’un an : 
+    ``` Strict−Transport−Securit : max−age =31536000 ; includeSubDomains ; ```
+  - PS: HTTPS securise seulement l'echange d'informations il agit uniquement pendant l'échange
+  
+  #### Recommandations
+  - R2 - Mettre en œuvre HSTS
+    - Il est nécessaire de mettre en œuvre `HSTS` afin de limiter les risques d’attaque de
+    type **Man-In-The-Middle** dus à des accès non sécurisés générés par les utilisateurs ou
+    par un attaquant.
+  - *Attention*
+    - Attention, la pérennité de l’accès en HTTPS est un prérequis indispensable à HSTS, qui rendra l’accès en clair impossible
+
+</details>
+ 
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
