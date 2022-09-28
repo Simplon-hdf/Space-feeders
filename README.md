@@ -127,6 +127,53 @@
 
 </details>
 
+- Content Security Policy (CSP)
+  - permet de définir une stratégie de contrôle des accès aux ressources atteignables d’un site web donné par l’application de restrictions sous forme de liste d’au￾torisations (aussi appelée liste blanche).
+  - Le principal avantage de définir une Content Security Policy (CSP) est de détecter et d’atténuer les attaques XSS.
+  - Elle utilise des méta-éléments ou des en-têtes pour donner le feu vert ou bloquer le contenu chargé sur votre site web.
+  - Pour activer CSP, vous devez configurer vos serveurs web afin d'ajouter un en-tête (header) HTTP Content-Security-Policy aux réponses. 
+```js
+  // Une autre possibilité consiste à utiliser l'élément HTML <meta> pour configurer la règle,
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src https://*; child-src 'none';" />
+``` 
+
+- http Cookies
+  - Un cookie HTTP (cookie web, cookie de navigateur) est un petit ensemble de données qu'un serveur envoie au navigateur web de l'utilisateur. Le navigateur peut alors le stocker localement, puis le renvoyer à la prochaine requête vers le même serveur. Typiquement, cette méthode est utilisée par le serveur pour déterminer si deux requêtes proviennent du même navigateur.
+  - Les cookies sont utilisés pour 3 raisons principales :
+    - Gestion des sessions : Logins, panier d'achat, score d'un jeu, ou tout autre chose dont le serveur doit se souvenir.
+    - Personnalisation : Préférences utilisateur, thèmes, et autres paramètres.
+    - Suivi : Enregistrement et analyse du comportement utilisateur.
+  - Les entêtes Set-Cookie et Cookie
+```js
+  // L'entête de réponse HTTP Set-Cookie envoie un cookie depuis le serveur vers le navigateur.
+  // cookie simple est défini comme ceci:
+  Set-Cookie: <nom-du-cookie>=<valeur-du-cookie>
+```
+
+- injection SQL (SQLi)
+  - L'injection SQL tire parti des applications web qui ne parviennent pas à valider les entrées utilisateur. Les pirates peuvent transmettre des commandes SQL via l'application web de manière malveillante pour exécution par une base de données principale.
+  - L'injection SQL peut obtenir un accès non autorisé à une base de données ou récupérer des informations directement à partir de la base de données. De nombreuses violations de données sont dues à l'injection SQL.
+```sql
+-- Les pirates utilisent une simple chaîne appelée chaîne magique, par exemple : 
+-- Nom d'utilisateur : administrateur
+-- Password: anything 'or'1'='1
+-- Après avoir cliqué sur le bouton de connexion, la requête SQL fonctionnera comme suit :
+"SELECT Count(*) FROM Users WHERE Username=' admin ' AND Password=' anything 'or'1'='1 ' ";
+```
+
+- Cross-Site Request Forgery (CSRF) 
+  - est une classe d’attaques qui force un utilisateur à exécuter, à son insu, des actions privilégiées sur une application tierce sur laquelle il est au￾thentifié. Ce type d’attaques a lieu lors de la navigation sur un site piégé qui émet des requêtes
+  vers un site de confiance, mais vulnérable au CSRF (un mécanisme d’authentification faible qui repose uniquement sur les cookies pour gérer les sessions des utilisateurs).
+  - pour se protéger des attaques cross-site request forgery : La méthode recommandée et la plus largement adoptée pour lutter contre les attaques cross-site request forgery consiste à utiliser un token anti-CSRF, ou token de synchronisation qui sera géneré aléatoirement en session par le serveur.
+
+
+- Cross-Site Scripting (XSS)
+  - Il s'agit d'une attaque de site Web courante qui est capable d'affecter le site Web ainsi que les utilisateurs du site Web. Les attaquants utilisent couramment JavaScript pour écrire du code malveillant dans XSS. Le code peut voler les détails des cookies de l'utilisateur , modifier les paramètres de l'utilisateur, afficher divers téléchargements de logiciels malveillants et bien d'autres.
+  - Comment puis-je empêcher XSS en PHP ? Filtrez vos entrées avec une liste blanche de caractères autorisés et utilisez des indications de type ou un casting de type. Échappez vos sorties avec des *** htmlentities *** et  ***ENT_QUOTES******  pour les contextes HTML, ou des échappements JavaScript Unicode pour les contextes JavaScript.
+
+
 
   
 <details>
