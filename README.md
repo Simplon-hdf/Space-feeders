@@ -363,9 +363,14 @@ d’occurrence de vulnérabilités XSS.
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
-
+### Sécurité 
+> Chaque recommandations sera mis en place dans les differents couches correspondentes.
 ### Client (applicative)
-
+> Coté navigateur Pire2pire
+  - La mise en place des cookies pour gérer:
+    - Gestion des sessions.
+    - Personnalisation.
+    - Suivi & Jornalisation : Enregistrement et analyse du comportement utilisateur.
 ### Serveur (Métier)
 ### BDD (Données)
 ## Sources
