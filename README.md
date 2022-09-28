@@ -108,6 +108,74 @@
 
 </details>
  
+ 
+<details>
+  <summary>
+
+  ### Certificate Transparency (CT)
+  
+  </summary>
+
+  #### Définition
+  - L'autorité de certification c'est un eco-systeme qui vise à faciliter la détection de certificats frauduleux ou invalides.
+  
+  #### Recommandations
+  - R3 - Surveiller les CT logs
+    - Il est recommandé que l’hébergeur ou le responsable d’un site web mette en œuvre
+    un processus de surveillance des *Certificate Transparency* logs afin de détecter et révoquer les certificats illégitimes qui correspondent à des domaines sous son contrôle.
+
+
+</details>
+
+
+  
+<details>
+  <summary>
+
+  ### Same-Origin Policy (SOP)
+  
+  </summary>
+
+  #### Définition
+  - c'est un protocole qui restrient dans la communications lorsque ils ont des origine differents.
+  - *SOP* est l'une des protections les plus importantes du navigateur.
+  - Elle sert à vérifier que les contenus chargés sur la page proviennent du même domaine que celle-ci.
+  - Toutes les données doivent provenir de la même source, c'est-à-dire du même serveur. 
+  
+</details>
+
+
+</details>
+
+
+  
+<details>
+  <summary>
+
+  ### Cross-Origin ressources Sharing (CORS)
+  
+  </summary>
+
+  #### Définition
+  - le Cross-Origin Resource Sharing il est en réalité strictement interdit : quiconque appelle un site Web ne doit pas charger d’autres données venant de serveurs externes ! Mais il peut y avoir des exceptions. Si les deux exploitants du site s’entendent sur une coopération, rien ne s’oppose à un accord. Le Cross-Origin Resource Sharing (CORS) régit cette coopération, il est donc important de n'utiliser CORS que dans certains cas particuliers, et de le configurer de manière aussi restrictive que possible.
+  - Accepter de partager les ressources entre un ou plusieur origine.
+```js
+    // hôte A
+    /OPTIONS
+    Origin: 'http://example.com'
+    Access-Control-Request-Method: DELETE
+```
+```js
+    // hôte B
+    Access-Control-Allow-Origin: 'http://example.com'
+    Access-Control-Allow-Methods: PUT, POST, DELETE
+```
+[This operation performs a simple exchange between the client and the server, using CORS headers to handle the privileges:](images/simple-req.png)
+
+</details>
+
+
+
 
 ## Notre application
 
