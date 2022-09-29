@@ -533,6 +533,23 @@ d’occurrence de vulnérabilités XSS.
 
   #### Recommandations
  </details>
+
+ <details>
+  <summary>
+
+  ### Click Jacking
+
+ </summary>
+
+  #### Définition
+
+  - Type d'attaque qui consiste en une fausse page web qui inciterai un utilisateur légitime à cliquer sur un lien ou un contenu qui pourrais paraître lui aussi légitime mais qui est en réalité une action qui est effectuée sans son consentement sur d'autres sites 
+  - Utilisés beaucoup avec des iframes invisibles qui vont pointer vers des sites auquel il aurais potentiellement des droits ou une session ouverte.
+  - Pour protéger de ce type d'attaque on peux utiliser plusieurs protection tel que:
+    - Le [Content Security Policy (CSP)](#cont)
+
+  #### Recommandations
+ </details>
  
 ## Notre application
 
