@@ -572,6 +572,21 @@ d’occurrence de vulnérabilités XSS.
 
   #### Recommandations
  </details>
+
+ 
+<details>
+  <summary>
+
+  ### Authentification vs Autorisation
+
+ </summary>
+
+  #### Définition
+
+
+  #### Recommandations
+  
+ </details>
  
 ## Notre application
 
