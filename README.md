@@ -597,7 +597,8 @@ d’occurrence de vulnérabilités XSS.
  Comparons cette attaque à lion qui chasse. L'animal que le lion chasse sait qu'il à besoins de boire pour survivre alors il va attendre sagement qu'un animal aille au point d'eau et attaquera lorsqu'il sera occupé à boire. Sur internet c'est la même histoire, l'utilisateur sera forcer de faire certaines manipulation sur l'application web alors le hacker attendre sagement que l'utilisateur agisse de la sorte. 
 
   #### Recommandations
-  
+ 
+ 
  </details>
  
  <details>
@@ -614,12 +615,17 @@ d’incidents de sécurité.
 
   #### Recommandations
   
+  - R9 - Conserver les historiques d'utilisation des facteurs d'authentification
+  - Il est recommandé de conserver les historiques des évènements liés à la vie des facteurs d’authentification afin de faciliter la détection de comportements anormaux
+qui présagerait d’une compromission d’un facteur d’authentification. Parmi ces évènements, on peut citer : la date de création, les tentatives d’authentification (réussies ou échouées), les demandes de renouvellement, la date de révocation, etc. Il est recommandé de suivre le guide de recommandations de sécurité pour la mise en œuvre
+d’un système de journalisation [6] appliqué au contexte de l’authentification.
+  
  </details>
  
  <details>
   <summary>
 
-  ###  sha2256
+  ###  sha256
 
  </summary>
 
@@ -703,6 +709,9 @@ d’incidents de sécurité.
   Le salage est une méthode permettant de renforcer la sécurité des informations qui sont destinées à être hachées en y ajoutant une donnée supplémentaire afin d’empêcher que deux informations identiques ne conduisent à la même empreinte.
 
   #### Recommandations
+ - R28 - Utiliser un sel aléatoire long
+  - Il est recommandé d’utiliser un sel choisi aléatoirement pour chaque compte et d’une
+longueur d’au moins 128 bits.
   
  </details>
  
@@ -740,31 +749,6 @@ après un certain nombre d’essais infructueux.
 exemple des empreintes de mots de passe ou une clé publique). L’attaquant n’a pas besoin d’interagir avec le serveur pour réaliser son attaque et a alors accès à une puissance de calcul potentiellement très importante.
 
   #### Recommandations
-  
- </details>
- 
- <details>
-  <summary>
-
-  ###  Les deux types d'attaques
-
- </summary>
-
-  #### Définition
-  
-  - Attaquant en ligne : l’attaquant peut uniquement interagir avec le serveur d’authentification
-pour tenter de retrouver une valeur secrète (un mot de passe ou une clé privée par exemple).
-Il doit par exemple être capable d’interagir avec un serveur Web afin de réaliser son attaque.
-Se protéger contre des attaquants en ligne nécessite de mettre en place des mesures spécifiques,
-comme le blocage temporaire de l’accès au compte pendant plusieurs secondes, voire minutes,
-après un certain nombre d’essais infructueux.
-  - Attaquant hors ligne : l’attaquant peut interagir avec le serveur d’authentification, et a également accès aux données permettant au vérifieur de contrôler l’identité du prouveur (par
-exemple des empreintes de mots de passe ou une clé publique). L’attaquant n’a pas besoin d’interagir avec le serveur pour réaliser son attaque et a alors accès à une puissance de calcul potentiellement très importante.
-
-  #### Recommandations
-  
-  - Se protéger contre des attaquants hors ligne nécessite que le vérifieur protège correctement
-les données permettant de contrôler l’identité des utilisateurs lors de l’authentification, par exemple en utilisant des fonctions de hachage dédiées pour le stockage des mots de passe ou en utilisant des protocoles d’authentification considérés comme forts.
   
  </details>
  
