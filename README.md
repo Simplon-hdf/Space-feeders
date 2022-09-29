@@ -650,6 +650,12 @@ Encodage (base64, etc):
 TOKAmWVuY29kYWdlIGNvbnNpc3RlIHNpbXBsZW1lbnQgw6AgdHJhbnNmb3JtZXIgZGVzIGRvbm7DqWVzIGRlIGZhw6dvbiDDoCBjZSBxdeKAmWVsbGVzIHNvaWVudCBwbHVzIGZhY2lsZW1lbnQg4oCcw6ljaGFuZ2VhYmxlc+KAnSBldCDigJxjb21tdW5pY2FibGVz4oCdIGVudHJlIGRpZmbDqXJlbnRzIHN5c3TDqG1lcy4KRW5jb2RlciBkdSBjb250ZW51IG7igJlhIGF1Y3VuIGltcGFjdCBhdSBuaXZlYXUgZGUgbGEgc8OpY3VyaXTDqSBkZXMgZG9ubsOpZXM6IGlsIHPigJlhZ2l0IHVuaXF1ZW1lbnQgZGUgbW9kaWZpZXIgbGEgZmHDp29uIGRvbnQgc29udCBhZmZpY2jDqWVzIGV0L291IGNvbW11bmlxdcOpZXMgZGVzIGluZm9ybWF0aW9ucy4=
 ```
 
+Chiffrement (symétrique, etc):
+
+Clé: HACHEMI
+
+se eomrnyeolr6 kvnupw6m h epjspmy dgz h1vuegz e x’ipdg k’yz isgqym6pte g1 h’7vl ow wp71pewyw otl(s) ulg4m1e(u). Hmz1p, sg2pq1 seu wi41vnplw m7hnv jszvhiuzezkl dg s’exovrk1lym 2tksm5m lt rvw5mkap1 pm/tls esi(5) 1lctlxq(1) zop1 iz ulswyi pm jhkmj4my ow kioppfhyi4 lls fvrzmls ! Ks i0qztg wp71pewyw 67weu ki oppfhyiymut evqym se eomrnyeolr6 16mg1vuy2e (3 jpq) w2 lg jlunmrgtiz2 hs1ti6zpqwl (6 otls)
+
   #### Recommandations
   
 </details>
