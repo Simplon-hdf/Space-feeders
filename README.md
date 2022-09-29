@@ -786,8 +786,12 @@ les données permettant de contrôler l’identité des utilisateurs lors de l�
  </details>
  
 
+ <details>
+  <summary>
 
 ## Notre application
+   
+   </summary>
 
 ### Cas concret
 
@@ -815,6 +819,8 @@ identifiant et mot de passe. Sur un site internet respecter le système : ce que
    
 ### Serveur (Métier)
 ### BDD (Données)
+  
+   </details>
 ## Sources
 
 - Guide ANSSI: RECOMMANDATIONS POUR LA MISE EN ŒUVRE D'UN SITE WEB : MAÎTRISER LES STANDARDS DE SÉCURITÉ CÔTÉ NAVIGATEUR:
