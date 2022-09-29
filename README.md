@@ -794,6 +794,8 @@ les données permettant de contrôler l’identité des utilisateurs lors de l�
    </summary>
 
 ### Cas concret
+  
+  ---
 
  Appelons notre site internet de formation en ligne "formationline" afin d'éviter les répétitions de "site internet".
 
