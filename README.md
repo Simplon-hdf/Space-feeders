@@ -428,6 +428,26 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
  </details>
 
+ <details>
+  <summary>
+  
+  ### Réduction de la surface d'attaque
+
+ </summary>
+
+  #### Définition
+
+  - Consiste à ne pas exposer les services ou tout autre point d'entrée et surtout si ne sont pas indispensables.
+  - Il faut limiter au maximum la présence de fonctions et composants du service qui ne seront pas strictement nécessaire pour le bon fonctionnement du système.
+  - Limiter l'exposition, que ce soit logicielle ou réseau, du début à la fin (de la conception au déploiement)
+  - Il existe plusieurs méthode pour cela tel que:
+    - Le filtrage du port TCP qui est nécessaire pour l'administration de la base de donnée
+    - La désactivation des systèmes qui ne seraient pas nécessaire dans la configuration par défaut
+    - Exclure des composants ou des modules qui seront inutiles et qui risqueraient d'avoir des failles exploitable par des hackers. 
+    
+  #### Recommandations
+ </details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
