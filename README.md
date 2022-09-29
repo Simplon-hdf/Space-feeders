@@ -408,6 +408,26 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
  </details>
 
+ <details>
+  <summary>
+
+  ### Défense en profondeur
+
+ </summary>
+
+  #### Définition
+
+  - Consiste à mettre en oeuvre différentes mesures de protections de façon indépendantes pour chaque menace qui pourrais survenir
+  - Il faut éviter de concentrer toutes les mesures de sécurité sur un seul point (un point d'entrée par exemple) et de laisser de coté les fonctions internes
+  - Il faut privilégier des systèmes avec des unités distincts, de sorte que chacune de ces unités soient protégés et participent à la protection globale du système. 
+  - Il existe différents types de défense en profondeur tel que:
+    - Des logiciels anti virus
+    - Des analyses de risque effectués fréquemment pour vérifier l'intégrité des données
+    - des pare feu avec des règles de filtrage pour limiter les requêtes effectués
+
+  #### Recommandations
+ </details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
