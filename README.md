@@ -468,6 +468,27 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
  </details>
 
+<details>
+  <summary>
+  
+  ### Sécurisation d'api
+
+ </summary>
+
+  #### Définition
+
+  - Beaucoup d'entreprises utilisent des API pour connecter entre eux leurs différents services et ainsi communiquer des données plus ou moins sensibles.
+  - Les fuites de données qui sont les plus importantes sont en général causés par des API avec des failles vulnérables et exploitables. (**Données médicales, données personnels, données financières**)
+  - La stratégie de protection va dépendre du type de données que l'ont transfert.
+  - Afin de sécuriser nos API il existe diverses manières de le faire tel que:
+    - Utiliser un chiffrement à l'aide du protocole TLS
+    - Utiliser des systèmes de signatures (à l'aide de clés de chiffrement) pour être sur que seul les utilisateurs autorisés puissent lire ces données.
+    - Faire une analyse de risque et se renseigner sur les applications tierces que l'ont utilise et que l'ont ne maîtrise pas.
+    - Identifier toutes les vulnérabilités de notre système et utiliser des solutions étudiés pour fixer ces failles comme par exemple maintenir à jour les différents composants et paquets utilisés, utiliser des outils d'analyse pour détecter des problèmes éventuels (**fuite de données, vulnérabilité d'un composant**)
+    
+  #### Recommandations
+ </details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
