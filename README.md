@@ -183,7 +183,18 @@
     - Dans le but de limiter l’exposition des authentifiants et pour préserver la confidentialité des utilisateurs, il est recommandé de positionner l’attribut crossorigin à anonymous pour les ressources dont la récupération ne nécessite pas d’authentificaion.
   - R44 - Préférer l'utilisation de l'API Fetch à XMLHttpRequest
     - Dans la mesure du possible, l’utilisation de l’API Fetch est recommandée par rapport à XMLHttpRequest
-
+- R50 - Cloisonner les traitements dans des iframes
+  - Les traitements utilisant des ressources externes non maîtrisées, mais nécessitant la
+présence d’un DOM devraient être isolés dans une iframe afin d’interdire leurs accès
+aux DOM, cookies, localStorage et sessionStorage de la page parente.
+- R51 - Cloisonner les traitements avec une sandbox
+  - Lors de l’utilisation d’une iframe à des fins de cloisonnement, il est recommandé de
+paramétrer l’attribut sandbox, qui permet une maîtrise accrue du confinement de
+l’iframe.
+- R58 - Proscrire l'usage de JSON-P
+  - Il est recommandé de proscrire l’utilisation de la technique JSON-P. La solution à
+privilégier pour consommer des ressources en cross-origin est le Cross-Origin Resource
+Sharing
 
 </details>
 
@@ -231,7 +242,11 @@
   - R16 - Définir la directive default-src
     - Lors de l’élaboration d’une CSP, il est recommandé de veiller à ce qu’elle contienne
     au moins la directive default-src, et que celle-ci ne soit pas simplement positionnée à « * ».
-
+- R37 - Compléter la mise œuvre de XHR par une configuration CSP
+  - Afin de limiter le risque d’exfiltration de données réalisable par un attaquant qui
+serait parvenu à remplacer les XHR par des appels CORS valides, il est recommandé
+de mettre en œuvre une stratégie Content Security Policy bloquant les appels XHR en
+dehors de l’Origin.
 
 </details>
 
@@ -274,6 +289,11 @@
     - Il est recommandé de vérifier, chaque fois que c’est possible, que les données ont
       bien la forme attendue. Lorsque cela est possible, une approche par liste d’autorisations est recommandée : par exemple une donnée censée être numérique ne doit
       être composée que de chiffres.
+- R38 - Protéger les appels XHR par un contrôle anti-CSRF 
+  - Il est recommandé d’ajouter un contrôle anti-CSRF aux appels XHR à l’aide d’un
+  CSRF-Token. Celui-ci doit contenir une valeur aléatoire générée à l’aide d’une fonction utilisant un générateur d’aléa cryptographique et ayant une entropie minimale
+  de 128 bits. Cette taille peut être atteinte en générant aléatoirement une chaîne de
+  22 caractères ASCII imprimables (A à Z, a à z et 0 à 9).
 
 </details>
 
@@ -355,7 +375,6 @@ d’occurrence de vulnérabilités XSS.
     - Il est recommandé de mettre en œuvre SRI pour les ressources JavaScript et CSS internes.
   - R12 - Contrôler l'intégrité des contenus tiers
     - Dans le cas d’un site en HTTPS, il est recommandé de mettre en œuvre systématiquement le contrôle de l’intégrité des ressources via SRI afin de réduire le risque de vulnérabilité XSS, en particulier pour les contenus issus d’un CDN.
-
 </details>
 
 <details>
@@ -489,7 +508,18 @@ d’occurrence de vulnérabilités XSS.
   - Il est nécessaire de mettre en œuvre les Recommandations de sécurité relatives à TLS pour tout site même si celui-ci ne traite pas d’informations sensibles.
 - R2 - Mettre en œuvre HSTS
   - Il est nécessaire de mettre en œuvre HSTS afin de limiter les risques d’attaque de type Man-In-The-Middle dus à des accès non sécurisés générés par les utilisateurs ou par un attaquant.
-
+- R61 - Limiter les composants logiciels tiers
+  - La liste des composants applicatifs tiers employés doit être limitée au strict nécessaire. Les composants non nécessaires doivent faire l’objet d’une suppression. Si leur
+suppression n’est pas envisageable, il est recommandé de les désactiver.
+- R62 - Maintenir à jour les composants logiciels tiers utilisés
+  - Les composants applicatifs tiers employés doivent être recensés et maintenus à jour.
+Cela impose que les composants sélectionnés pour une production soient évalués sur
+leur pérennité lors des phases de conception et que les vulnérabilités publiées soient
+suivies pour chacun d’eux.
+- R63 - Ne pas modifier le cœur des composants logiciels tiers utilisés
+  - Pour faciliter leur mise à jour, il est recommandé de ne pas modifier le cœur des
+composants logiciels tiers utilisés. Toutes les modifications doivent se faire par des
+greffons ou par l’utilisation d’un composant adapté aux besoins
  </details>
 
 <details>
@@ -556,6 +586,12 @@ d’occurrence de vulnérabilités XSS.
 
 - R17 - Utiliser CSP contre le clickjacking 
   - Il est recommandé de mettre en place une protection contre le détournement de clic en définissant l’attribut CSP frame-ancestors à une liste d’autorisations minimale.
+- R18 - Utiliser X-Frame-Options contre le clickjacking
+  - il est recommandé de mettre en place une protection complémentaire contre le détournement de clic en définissant un en-tête
+
+```
+X-Frame-Options strict.
+```
 
  </details>
 
@@ -650,7 +686,32 @@ d’un système de journalisation [6] appliqué au contexte de l’authentificat
 
   #### Recommandations
   
- </details>
+</details>
+
+<details>
+  <summary>
+
+  ### Encodage vs Chiffrement
+
+ </summary>
+
+  #### Définition
+
+Encodage (base64, etc):
+
+```
+TOKAmWVuY29kYWdlIGNvbnNpc3RlIHNpbXBsZW1lbnQgw6AgdHJhbnNmb3JtZXIgZGVzIGRvbm7DqWVzIGRlIGZhw6dvbiDDoCBjZSBxdeKAmWVsbGVzIHNvaWVudCBwbHVzIGZhY2lsZW1lbnQg4oCcw6ljaGFuZ2VhYmxlc+KAnSBldCDigJxjb21tdW5pY2FibGVz4oCdIGVudHJlIGRpZmbDqXJlbnRzIHN5c3TDqG1lcy4KRW5jb2RlciBkdSBjb250ZW51IG7igJlhIGF1Y3VuIGltcGFjdCBhdSBuaXZlYXUgZGUgbGEgc8OpY3VyaXTDqSBkZXMgZG9ubsOpZXM6IGlsIHPigJlhZ2l0IHVuaXF1ZW1lbnQgZGUgbW9kaWZpZXIgbGEgZmHDp29uIGRvbnQgc29udCBhZmZpY2jDqWVzIGV0L291IGNvbW11bmlxdcOpZXMgZGVzIGluZm9ybWF0aW9ucy4=
+```
+
+Chiffrement (symétrique, etc):
+
+Clé: HACHEMI
+
+se eomrnyeolr6 kvnupw6m h epjspmy dgz h1vuegz e x’ipdg k’yz isgqym6pte g1 h’7vl ow wp71pewyw otl(s) ulg4m1e(u). Hmz1p, sg2pq1 seu wi41vnplw m7hnv jszvhiuzezkl dg s’exovrk1lym 2tksm5m lt rvw5mkap1 pm/tls esi(5) 1lctlxq(1) zop1 iz ulswyi pm jhkmj4my ow kioppfhyi4 lls fvrzmls ! Ks i0qztg wp71pewyw 67weu ki oppfhyiymut evqym se eomrnyeolr6 16mg1vuy2e (3 jpq) w2 lg jlunmrgtiz2 hs1ti6zpqwl (6 otls)
+
+  #### Recommandations
+  
+</details>
 
  <details>
   <summary>
