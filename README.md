@@ -376,6 +376,23 @@ d’occurrence de vulnérabilités XSS.
 
 </details>
 
+<details>
+  <summary>
+
+  ### Déni de service
+
+  </summary>
+
+#### Définition
+
+- Attaque visant à rendre un service indisponible aux clients.
+- Peut provoquer un ralentissement, voir même un arrêt complet du service.
+- Nuit à la disponibilité du système et à l'image de l'entreprise ainsi qu'aux investissements financiers.
+
+#### Recommandations
+
+</details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
