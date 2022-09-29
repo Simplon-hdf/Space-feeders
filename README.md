@@ -633,7 +633,26 @@ X-Frame-Options strict.
 
   #### Recommandations
   
- </details>
+</details>
+
+<details>
+  <summary>
+
+  ### Encodage vs Chiffrement
+
+ </summary>
+
+  #### Définition
+
+Encodage (base64, etc):
+
+```
+TOKAmWVuY29kYWdlIGNvbnNpc3RlIHNpbXBsZW1lbnQgw6AgdHJhbnNmb3JtZXIgZGVzIGRvbm7DqWVzIGRlIGZhw6dvbiDDoCBjZSBxdeKAmWVsbGVzIHNvaWVudCBwbHVzIGZhY2lsZW1lbnQg4oCcw6ljaGFuZ2VhYmxlc+KAnSBldCDigJxjb21tdW5pY2FibGVz4oCdIGVudHJlIGRpZmbDqXJlbnRzIHN5c3TDqG1lcy4KRW5jb2RlciBkdSBjb250ZW51IG7igJlhIGF1Y3VuIGltcGFjdCBhdSBuaXZlYXUgZGUgbGEgc8OpY3VyaXTDqSBkZXMgZG9ubsOpZXM6IGlsIHPigJlhZ2l0IHVuaXF1ZW1lbnQgZGUgbW9kaWZpZXIgbGEgZmHDp29uIGRvbnQgc29udCBhZmZpY2jDqWVzIGV0L291IGNvbW11bmlxdcOpZXMgZGVzIGluZm9ybWF0aW9ucy4=
+```
+
+  #### Recommandations
+  
+</details>
 
 ## Notre application
 
