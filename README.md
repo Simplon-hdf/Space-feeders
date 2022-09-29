@@ -372,8 +372,6 @@ d’occurrence de vulnérabilités XSS.
 - Le plus souvent utilisé pour des objectifs lucratifs, en vendant les données sur le Darkweb (Le web profond).
 - Données achetés pour usurper les identités, voler de l'argent, ou les utiliser à d'autres fins malveillantes.
 
-#### Recommandations
-
 </details>
 
 <details>
@@ -389,8 +387,6 @@ d’occurrence de vulnérabilités XSS.
 - Peut provoquer un ralentissement, voir même un arrêt complet du service.
 - Nuit à la disponibilité du système et à l'image de l'entreprise ainsi qu'aux investissements financiers.
 
-#### Recommandations
-
 </details>
 
 <details>
@@ -405,7 +401,6 @@ d’occurrence de vulnérabilités XSS.
   - Attaque qui vise à s'introduire dans un système, pour en modifier son contenu, introduire du code malveillant, remplacer des contenus et informations légitimes par le contenu choisi par l'attaquant (harcèlement, dénigrer, message politique).
   - nuit à l'intégrité du service et de leur propriétaire et peut également nuire aux utilisateurs.
 
-  #### Recommandations
  </details>
 
  <details>
@@ -426,6 +421,9 @@ d’occurrence de vulnérabilités XSS.
     - des pare feu avec des règles de filtrage pour limiter les requêtes effectués
 
   #### Recommandations
+
+- Cela concerne toutes les recommandations ensemble qui permette de créer une défense en profondeur de façon fiable sur chaque partie des composants
+
  </details>
 
  <details>
@@ -444,8 +442,7 @@ d’occurrence de vulnérabilités XSS.
     - Le filtrage du port TCP qui est nécessaire pour l'administration de la base de donnée
     - La désactivation des systèmes qui ne seraient pas nécessaire dans la configuration par défaut
     - Exclure des composants ou des modules qui seront inutiles et qui risqueraient d'avoir des failles exploitable par des hackers. 
-    
-  #### Recommandations
+
  </details>
 
  <details>
@@ -487,6 +484,12 @@ d’occurrence de vulnérabilités XSS.
     - Identifier toutes les vulnérabilités de notre système et utiliser des solutions étudiés pour fixer ces failles comme par exemple maintenir à jour les différents composants et paquets utilisés, utiliser des outils d'analyse pour détecter des problèmes éventuels (**fuite de données, vulnérabilité d'un composant**)
     
   #### Recommandations
+
+- R1 - Recommandations de sécurité relatives à TLS:
+  - Il est nécessaire de mettre en œuvre les Recommandations de sécurité relatives à TLS pour tout site même si celui-ci ne traite pas d’informations sensibles.
+- R2 - Mettre en œuvre HSTS
+  - Il est nécessaire de mettre en œuvre HSTS afin de limiter les risques d’attaque de type Man-In-The-Middle dus à des accès non sécurisés générés par les utilisateurs ou par un attaquant.
+
  </details>
 
 <details>
@@ -507,6 +510,7 @@ d’occurrence de vulnérabilités XSS.
     - Le [clickjacking](#click-jacking) 
 
   #### Recommandations
+
  </details> 
 
  <details>
@@ -549,9 +553,13 @@ d’occurrence de vulnérabilités XSS.
     - Le [Content Security Policy (CSP)](#cont)
 
   #### Recommandations
+
+- R17 - Utiliser CSP contre le clickjacking 
+  - Il est recommandé de mettre en place une protection contre le détournement de clic en définissant l’attribut CSP frame-ancestors à une liste d’autorisations minimale.
+
  </details>
 
- <details>
+<details>
   <summary>
   
   ### Requête silencieuse
@@ -571,7 +579,10 @@ d’occurrence de vulnérabilités XSS.
   ```
 
   #### Recommandations
- </details>
+- R20 - Réduire l'impact des requêtes silencieuses via CSP
+  - Il est recommandé de définir une CSP limitant les Origins atteignables par le navigateur dans le but de bloquer l’émission de requêtes silencieuses difficiles à maîtriser à cause de la nature de la spécification HTML.
+  
+</details>
 
  
 <details>
@@ -587,7 +598,7 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
   
  </details>
- 
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
