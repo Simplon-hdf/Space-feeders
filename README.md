@@ -627,12 +627,65 @@ X-Frame-Options strict.
 <details>
   <summary>
 
-  ### Authentification vs Autorisation
+  ###  L'attaque du point d'eau
 
  </summary>
 
   #### Définition
+ 
+ Comparons cette attaque à lion qui chasse. L'animal que le lion chasse sait qu'il à besoins de boire pour survivre alors il va attendre sagement qu'un animal aille au point d'eau et attaquera lorsqu'il sera occupé à boire. Sur internet c'est la même histoire, l'utilisateur sera forcer de faire certaines manipulation sur l'application web alors le hacker attendre sagement que l'utilisateur agisse de la sorte. 
 
+  #### Recommandations
+ 
+ 
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  La journalisation
+
+ </summary>
+
+  #### Définition
+ 
+ La conservation des historiques des évènements liés à l’authentification (autrement appelée journalisation) a pour objectifs une supervision de la sécurité et une investigation a posteriori en cas
+d’incidents de sécurité.
+
+  #### Recommandations
+  
+  - R9 - Conserver les historiques d'utilisation des facteurs d'authentification
+  - Il est recommandé de conserver les historiques des évènements liés à la vie des facteurs d’authentification afin de faciliter la détection de comportements anormaux
+qui présagerait d’une compromission d’un facteur d’authentification. Parmi ces évènements, on peut citer : la date de création, les tentatives d’authentification (réussies ou échouées), les demandes de renouvellement, la date de révocation, etc. Il est recommandé de suivre le guide de recommandations de sécurité pour la mise en œuvre
+d’un système de journalisation [6] appliqué au contexte de l’authentification.
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  sha256
+
+ </summary>
+
+  #### Définition
+ 
+ SHA-2 est une famille de fonctions de hachage qui ont été conçues par la National Security Agency des États-Unis, sur le modèle des fonctions SHA-1 et SHA-0, elles-mêmes fortement inspirées de la fonction MD4 de Ron Rivest. 
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  RGPD
+
+ </summary>
+
+  #### Définition
+ 
+ Le règlement général sur la protection des données. Il est important de respecté cette réglementation afin de ne pas avoir de problème juridique avec la CNIL. Exemple : si un site internet conserve des données d'un utilisateur (adresse mail, nom, prénom, ...), l'utilisateur doit être prévenu, il doit également avoir la possibilité de modifier ces données, de les supprimer également à sa guise. 
 
   #### Recommandations
   
@@ -663,9 +716,146 @@ se eomrnyeolr6 kvnupw6m h epjspmy dgz h1vuegz e x’ipdg k’yz isgqym6pte g1 h�
   
 </details>
 
-## Notre application
+ <details>
+  <summary>
 
-<!-- Ce que l'ont va mettre en place et pour quel raison -->
+  ###  Bug bunty
+
+ </summary>
+
+  #### Définition
+  
+ Une prime aux bugs est un programme de récompenses proposé par de nombreux sites web et développeurs de logiciel qui offre des récompenses aux personnes qui rapportent des bugs, surtout ceux associés à des vulnérabilités.
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  Le mode strict
+
+ </summary>
+
+  #### Définition
+  
+ Le mode strict permet de détecter les problèmes dans votre code. Des exceptions sont alors émises. Si des actions potentiellement dangereuses, par exemple accéder à une variable globale, sont effectuées, le mode strict peut les prévenir ou bien émettre une erreur.
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  Le Hashage
+
+ </summary>
+
+  #### Définition
+  
+ On nomme fonction de hachage, de l'anglais hash function par analogie avec la cuisine, une fonction particulière qui, à partir d'une donnée fournie en entrée, calcule une empreinte numérique servant à identifier rapidement la donnée initiale, au même titre qu'une signature pour identifier une personne.
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  Le Salage
+
+ </summary>
+
+  #### Définition
+  
+  Le salage est une méthode permettant de renforcer la sécurité des informations qui sont destinées à être hachées en y ajoutant une donnée supplémentaire afin d’empêcher que deux informations identiques ne conduisent à la même empreinte.
+
+  #### Recommandations
+ - R28 - Utiliser un sel aléatoire long
+  - Il est recommandé d’utiliser un sel choisi aléatoirement pour chaque compte et d’une
+longueur d’au moins 128 bits.
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  RBAC
+
+ </summary>
+
+  #### Définition
+  
+  Le contrôle d'accès basé sur les rôles est un modèle de contrôle d'accès à un système d'information dans lequel chaque décision d'accès est basée sur le rôle auquel l'utilisateur est associé.
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  Les deux types d'attaques
+
+ </summary>
+
+  #### Définition
+  
+  - Attaquant en ligne : l’attaquant peut uniquement interagir avec le serveur d’authentification
+pour tenter de retrouver une valeur secrète (un mot de passe ou une clé privée par exemple).
+Il doit par exemple être capable d’interagir avec un serveur Web afin de réaliser son attaque.
+Se protéger contre des attaquants en ligne nécessite de mettre en place des mesures spécifiques,
+comme le blocage temporaire de l’accès au compte pendant plusieurs secondes, voire minutes,
+après un certain nombre d’essais infructueux.
+  - Attaquant hors ligne : l’attaquant peut interagir avec le serveur d’authentification, et a également accès aux données permettant au vérifieur de contrôler l’identité du prouveur (par
+exemple des empreintes de mots de passe ou une clé publique). L’attaquant n’a pas besoin d’interagir avec le serveur pour réaliser son attaque et a alors accès à une puissance de calcul potentiellement très importante.
+
+  #### Recommandations
+  
+ </details>
+ 
+ <details>
+  <summary>
+
+  ###  Exemples faille CSS
+
+ </summary>
+
+  #### Définition
+  
+  Une faille CSS que le site internet utilise le CSS pour cacher du contenu payant. Prenons un site d’article, ou les articles sont payants mais en fond nous pouvons apercevoir que les texte qui est présent mais un contraste est visible sans possibilité de scroll et avec une div en plein milieu de l’écran qui nous explique qu’il faut payer pour y remédier. Solution ? Utiliser l’inspecteur afin de désactiver ce qui nous gêne et avoir la possibilité de l’utiliser à notre guise.
+
+  #### Recommandations
+   
+   - Ne pas utiliser ce que le client peut modifier sans difficultés via le navigateur, pour sécurisé des données si l'on souhaite que l'utilisateur n'accède que à certains moment.
+  
+ </details>
+ 
+
+ <details>
+  <summary>
+
+## Notre application
+   
+   </summary>
+
+### Cas concret
+  
+  ---
+
+ Appelons notre site internet de formation en ligne "formationline" afin d'éviter les répétitions de "site internet".
+
+ Dans formationline nous auront besoins d'un utilisateur appelé formateur, un utilisateur appelé apprenant puis un administrateur. 
+
+ Ce qui change entre ces utilisateur sera les droits d'utilisation sur formationline, un apprenant n'a pas utilité à poster des formations, sont buts c'est de les suivent donc un identifiant est un mot de passe complexe suffise étant donné qu'il ne possède pas le droit de poster des formations, donc les apprenants ne pourront pas publié des vidéos, documents. En revanche les formateurs eux, possèdent le droit de poster des vidéos, documents donc nécessite une sécurité plus approfondi sur leur compte. Une connexion avec une double authentification est donc nécessaire, un identifiant, un mot de passe et si possible une empreinte digitale serait la sécurité maximale. Dans le cas ou l'empreinte digitale n'est pas possible nous devons nous rendre à l'évidence et utiliser l'authentification à double facteur avec un code envoyé dans la boite mail à rentrer après la validation de connexion avec
+identifiant et mot de passe. Sur un site internet respecter le système : ce que je sais, ce je possède et ce que je suis, reste très compliqué. L'administrateur doit possède la sécurité maximal, un lien reçu par mail avec une validité dans le temps, ce lien fera passer l'administrateur devant une interface de connexion ou il faudra : un identifiant, un mot de passe complexe.
+
+ Il faut également que les sessions soit limité dans le temps. Il ne faut pas laisser une sessions connecté indéfiniment, par exemple si le formateurs n'est plus aller sur la plateforme depuis plus de 24 heures il faut déconnecter sa session. Pour les apprenants cela peut s'élargir puis qu'il possède moins de droit donc nous pouvons élargir le temps de la session à 48 heures par exemple, par contre pour l'administrateur la session doit se déconnecter des qu'il quitte la page. 
+
+ Un système de journalisation est également important : la conservation des historiques des évènements liés à l'authentification (autrement appelée journalisation) a pour objectifs une supervision de la sécurité et une investigation en cas d'incidents de sécurité, tous cela dans la réglementation du RGPD. 
+ 
 ### Sécurité 
 > Chaque recommandations sera mis en place dans les differents couches correspondentes.
 ### Client (applicative)
@@ -674,8 +864,10 @@ se eomrnyeolr6 kvnupw6m h epjspmy dgz h1vuegz e x’ipdg k’yz isgqym6pte g1 h�
     - Gestion des sessions.
     - Personnalisation.
     - Suivi & Jornalisation : Enregistrement et analyse du comportement utilisateur.
-
-### Conclusion
+    
+   - Il faut également s'assurer de la sécurité du DNS. Le Domain Name System ou DNS est un service informatique distribué utilisé qui traduit les noms de domaine Internet en adresse IP ou autres enregistrements. Le DNS simplifie la navigation sur internet, cela nous permet de ne pas apprendre ou retenir les adresse ip de chaque site internet. 
+   
+ </details>
 ## Sources
 
 - Guide ANSSI: RECOMMANDATIONS POUR LA MISE EN ŒUVRE D'UN SITE WEB : MAÎTRISER LES STANDARDS DE SÉCURITÉ CÔTÉ NAVIGATEUR:
