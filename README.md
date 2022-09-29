@@ -556,6 +556,12 @@ d’occurrence de vulnérabilités XSS.
 
 - R17 - Utiliser CSP contre le clickjacking 
   - Il est recommandé de mettre en place une protection contre le détournement de clic en définissant l’attribut CSP frame-ancestors à une liste d’autorisations minimale.
+- R18 - Utiliser X-Frame-Options contre le clickjacking
+  - il est recommandé de mettre en place une protection complémentaire contre le détournement de clic en définissant un en-tête
+
+```
+X-Frame-Options strict.
+```
 
  </details>
 
