@@ -489,6 +489,26 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
  </details>
 
+<details>
+  <summary>
+
+  ### Sanitization
+
+ </summary>
+
+  #### Définition
+
+  - Méthode pour "désinfecter" des donnés reçus afin de s'assurer qu'il ne s'agit pas de données malveillantes et prévenir de toute tentative d'attaque (**injection SQL**)
+  - Il est portant de les désinfecter **avant** de les manipuler dans nos script.
+  - La plupart des point d'entrés de ce type d'attaque se trouve dans les formulaires, que ce soit des formulaires de contact, ou des formulaire d'inscription et de connexion
+  - Les attaques sur ce genre de formulaires peuvent également être:
+    - des tentatives d'inclusion de fichiers malveillants
+    - des injections de code (javascript par exemple)
+    - Le [clickjacking](#click-jacking) 
+
+  #### Recommandations
+ </details> 
+ 
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
