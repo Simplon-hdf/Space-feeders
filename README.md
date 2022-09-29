@@ -4,11 +4,14 @@
  1. [Introduction](#introduction)
  2. [Définitions et recommandations](#définitions-et-recommandations)
  3. [Notre application](#notre-application)
- 4. [Sources](#sources)
+ 4. [Conclusion](#conclusion)
+ 5. [Sources](#sources)
 ## Introduction
 <!-- Notre introduction en anglais -->
-
-
+Today, we are going to present you a security watch and the complete implementation of the "pire2pre.com" website which is an online training platform. For this we had to research, analyse the risks and security issues to guarantee the integrity of the data that future users will entrust through the application.
+Thanks to all this research, we were able to determine a security strategy for the application, from design to deployment.
+In this document, we will talk to you about the list of the main families of terms to know, the flaws and the security recommendations provided by the ANSSI documents.
+We will then talk to you about the security recommendations that we recommend and that are essential to guarantee the confidentiality, availability and integrity of your project.
 
 ## Définitions et recommandations
 
@@ -864,10 +867,7 @@ identifiant et mot de passe. Sur un site internet respecter le système : ce que
     
    - Il faut également s'assurer de la sécurité du DNS. Le Domain Name System ou DNS est un service informatique distribué utilisé qui traduit les noms de domaine Internet en adresse IP ou autres enregistrements. Le DNS simplifie la navigation sur internet, cela nous permet de ne pas apprendre ou retenir les adresse ip de chaque site internet. 
    
-### Serveur (Métier)
-### BDD (Données)
-  
-   </details>
+ </details>
 ## Sources
 
 - Guide ANSSI: RECOMMANDATIONS POUR LA MISE EN ŒUVRE D'UN SITE WEB : MAÎTRISER LES STANDARDS DE SÉCURITÉ CÔTÉ NAVIGATEUR:
