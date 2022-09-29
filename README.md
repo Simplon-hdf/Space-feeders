@@ -616,7 +616,7 @@ d’incidents de sécurité.
   
  </details>
  
-  <details>
+ <details>
   <summary>
 
   ###  sha2256
@@ -631,7 +631,7 @@ d’incidents de sécurité.
   
  </details>
  
-  <details>
+ <details>
   <summary>
 
   ###  RGPD
@@ -646,7 +646,7 @@ d’incidents de sécurité.
   
  </details>
 
-  <details>
+ <details>
   <summary>
 
   ###  Bug bunty
@@ -661,7 +661,7 @@ d’incidents de sécurité.
   
  </details>
  
-   <details>
+ <details>
   <summary>
 
   ###  Le mode strict
@@ -676,7 +676,7 @@ d’incidents de sécurité.
   
  </details>
  
-    <details>
+ <details>
   <summary>
 
   ###  Le Hashage
@@ -691,7 +691,7 @@ d’incidents de sécurité.
   
  </details>
  
-     <details>
+ <details>
   <summary>
 
   ###  Le Salage
@@ -706,7 +706,7 @@ d’incidents de sécurité.
   
  </details>
  
-      <details>
+ <details>
   <summary>
 
   ###  RBAC
@@ -721,7 +721,7 @@ d’incidents de sécurité.
   
  </details>
  
-       <details>
+ <details>
   <summary>
 
   ###  Les deux types d'attaques
@@ -743,7 +743,7 @@ exemple des empreintes de mots de passe ou une clé publique). L’attaquant n�
   
  </details>
  
-        <details>
+ <details>
   <summary>
 
   ###  Les deux types d'attaques
@@ -768,7 +768,7 @@ les données permettant de contrôler l’identité des utilisateurs lors de l�
   
  </details>
  
-         <details>
+ <details>
   <summary>
 
   ###  Exemples faille CSS
