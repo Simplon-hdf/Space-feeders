@@ -508,6 +508,31 @@ d’occurrence de vulnérabilités XSS.
 
   #### Recommandations
  </details> 
+
+ <details>
+  <summary>
+  
+  ### Stratégie de sauvegarde
+
+ </summary>
+
+  #### Définition
+
+  - Plan qui consiste à garantir que les données qui sont essentielles à l'entreprise soient sauvegardés et prêtes à être restaurées lors d'une perte de données. 
+  - Il faut minimiser les temps d'arrêt de l'entreprise ou du service autant que possible.
+  - La continuité commerciale repose sur cette stratégie de sauvegarde et sur la reprise d'activités après incident
+  - Pour mettre en place cette stratégie, nous pouvoir utiliser la stratégie 3 2 1 qui implique:
+    - Avoir au moins 3 copie des données dans des endroits différents
+    - Avoir 2 copie sur des supports différents
+    - Avoir 1 copie hors site.
+  Pour mettre en place la stratégie 3 2 1 il faut suivre plusieurs étapes:
+    - Déterminer l'importance et la disponibilités de chaque données (s'assurer des données cruciales pour l'entreprise et du délai d'attente pour lesquels on veux récupérer les données perdus en fonction du coût et des ressources qui auront étés utilisés au déploiement et a la maintenance de celui-ci)
+    - Décider de la fréquence et de la régulation des sauvegardes (cela peut être différentes fréquences selon le type de données ou selon le type de sauvegarde), et bien utiliser des systèmes de sauvegarde versionnés afin de ne pas se retrouver avec une sauvegarde corrompu sans pouvoir revenir à une sauvegarde plus ancienne.
+    - Réfléchir au système de déploiement qui sera mis en oeuvre et à la façon dont les sauvegardes seront effectués (manuelles ou automatique avec un outil)
+    - Bien tester le processus de restauration à l'aide de simulations qui vont reproduire ce qui pourrais se passer en cas de perte des données et ainsi s'assurer que le système de sauvegarde ne mettrais pas en évidence des éventuels problèmes que l'ont aurais pu négliger ou ignorer auparavant 
+
+  #### Recommandations
+ </details>
  
 ## Notre application
 
