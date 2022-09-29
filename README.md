@@ -358,7 +358,246 @@ d’occurrence de vulnérabilités XSS.
 
 </details>
 
+<details>
+  <summary>
 
+  ### Vol de donnée
+
+  </summary>
+
+#### Définition
+
+- Attaque qui va provoquer la fuite des données tel que les identifiants, mots de passes, informations personnels et très sensibles.
+- Nuit à la confidentialité des données fuités de l'auteur qui peuvent circuler librement sur le web.
+- Le plus souvent utilisé pour des objectifs lucratifs, en vendant les données sur le Darkweb (Le web profond).
+- Données achetés pour usurper les identités, voler de l'argent, ou les utiliser à d'autres fins malveillantes.
+
+</details>
+
+<details>
+  <summary>
+
+  ### Déni de service
+
+  </summary>
+
+#### Définition
+
+- Attaque visant à rendre un service indisponible aux clients.
+- Peut provoquer un ralentissement, voir même un arrêt complet du service.
+- Nuit à la disponibilité du système et à l'image de l'entreprise ainsi qu'aux investissements financiers.
+
+</details>
+
+<details>
+  <summary>
+  
+  ### La compromission des ressources
+ 
+  </summary>
+
+  #### Définition
+
+  - Attaque qui vise à s'introduire dans un système, pour en modifier son contenu, introduire du code malveillant, remplacer des contenus et informations légitimes par le contenu choisi par l'attaquant (harcèlement, dénigrer, message politique).
+  - nuit à l'intégrité du service et de leur propriétaire et peut également nuire aux utilisateurs.
+
+ </details>
+
+ <details>
+  <summary>
+
+  ### Défense en profondeur
+
+ </summary>
+
+  #### Définition
+
+  - Consiste à mettre en oeuvre différentes mesures de protections de façon indépendantes pour chaque menace qui pourrais survenir
+  - Il faut éviter de concentrer toutes les mesures de sécurité sur un seul point (un point d'entrée par exemple) et de laisser de coté les fonctions internes
+  - Il faut privilégier des systèmes avec des unités distincts, de sorte que chacune de ces unités soient protégés et participent à la protection globale du système. 
+  - Il existe différents types de défense en profondeur tel que:
+    - Des logiciels anti virus
+    - Des analyses de risque effectués fréquemment pour vérifier l'intégrité des données
+    - des pare feu avec des règles de filtrage pour limiter les requêtes effectués
+
+  #### Recommandations
+
+- Cela concerne toutes les recommandations ensemble qui permette de créer une défense en profondeur de façon fiable sur chaque partie des composants
+
+ </details>
+
+ <details>
+  <summary>
+  
+  ### Réduction de la surface d'attaque
+
+ </summary>
+
+  #### Définition
+
+  - Consiste à ne pas exposer les services ou tout autre point d'entrée et surtout si ne sont pas indispensables.
+  - Il faut limiter au maximum la présence de fonctions et composants du service qui ne seront pas strictement nécessaire pour le bon fonctionnement du système.
+  - Limiter l'exposition, que ce soit logicielle ou réseau, du début à la fin (de la conception au déploiement)
+  - Il existe plusieurs méthode pour cela tel que:
+    - Le filtrage du port TCP qui est nécessaire pour l'administration de la base de donnée
+    - La désactivation des systèmes qui ne seraient pas nécessaire dans la configuration par défaut
+    - Exclure des composants ou des modules qui seront inutiles et qui risqueraient d'avoir des failles exploitable par des hackers. 
+
+ </details>
+
+ <details>
+  <summary>
+  
+  ### Moindre privilèges
+
+ </summary>
+
+  #### Définition
+
+  - Processus visant à ne donner strictement que des droits nécessaire aux utilisateurs et acteurs dans le système
+  - Réduire le nombre de permission à un strict minimum nécessaire au bon fonctionnement de son rôle sans altérer ou bloquer ses fonctions principales.
+  - Permettra de limiter le risque de compromission des composants et ainsi éviter le risque de destruction des données, de leur vol ou de leur altération.
+  - Pour effectuer cela nous pouvons effectuer plusieurs taches tel que:
+    - Limiter les permission de nos utilisateurs de l'application sur le système de fichier
+    - Limiter les permissions de nos API afin d'empêcher n'importe quel service web ou navigateur à y accéder
+    - Ne pas hésiter à utiliser RBAC afin de créer des rôles selon les besoins et selon le nombre de besoin d'accès aux diverses données et aux différentes permissions par rôles
+
+  #### Recommandations
+ </details>
+
+<details>
+  <summary>
+  
+  ### Sécurisation d'api
+
+ </summary>
+
+  #### Définition
+
+  - Beaucoup d'entreprises utilisent des API pour connecter entre eux leurs différents services et ainsi communiquer des données plus ou moins sensibles.
+  - Les fuites de données qui sont les plus importantes sont en général causés par des API avec des failles vulnérables et exploitables. (**Données médicales, données personnels, données financières**)
+  - La stratégie de protection va dépendre du type de données que l'ont transfert.
+  - Afin de sécuriser nos API il existe diverses manières de le faire tel que:
+    - Utiliser un chiffrement à l'aide du protocole TLS
+    - Utiliser des systèmes de signatures (à l'aide de clés de chiffrement) pour être sur que seul les utilisateurs autorisés puissent lire ces données.
+    - Faire une analyse de risque et se renseigner sur les applications tierces que l'ont utilise et que l'ont ne maîtrise pas.
+    - Identifier toutes les vulnérabilités de notre système et utiliser des solutions étudiés pour fixer ces failles comme par exemple maintenir à jour les différents composants et paquets utilisés, utiliser des outils d'analyse pour détecter des problèmes éventuels (**fuite de données, vulnérabilité d'un composant**)
+    
+  #### Recommandations
+
+- R1 - Recommandations de sécurité relatives à TLS:
+  - Il est nécessaire de mettre en œuvre les Recommandations de sécurité relatives à TLS pour tout site même si celui-ci ne traite pas d’informations sensibles.
+- R2 - Mettre en œuvre HSTS
+  - Il est nécessaire de mettre en œuvre HSTS afin de limiter les risques d’attaque de type Man-In-The-Middle dus à des accès non sécurisés générés par les utilisateurs ou par un attaquant.
+
+ </details>
+
+<details>
+  <summary>
+
+  ### Sanitization
+
+ </summary>
+
+  #### Définition
+
+  - Méthode pour "désinfecter" des donnés reçus afin de s'assurer qu'il ne s'agit pas de données malveillantes et prévenir de toute tentative d'attaque (**injection SQL**)
+  - Il est portant de les désinfecter **avant** de les manipuler dans nos script.
+  - La plupart des point d'entrés de ce type d'attaque se trouve dans les formulaires, que ce soit des formulaires de contact, ou des formulaire d'inscription et de connexion
+  - Les attaques sur ce genre de formulaires peuvent également être:
+    - des tentatives d'inclusion de fichiers malveillants
+    - des injections de code (javascript par exemple)
+    - Le [clickjacking](#click-jacking) 
+
+  #### Recommandations
+
+ </details> 
+
+ <details>
+  <summary>
+  
+  ### Stratégie de sauvegarde
+
+ </summary>
+
+  #### Définition
+
+  - Plan qui consiste à garantir que les données qui sont essentielles à l'entreprise soient sauvegardés et prêtes à être restaurées lors d'une perte de données. 
+  - Il faut minimiser les temps d'arrêt de l'entreprise ou du service autant que possible.
+  - La continuité commerciale repose sur cette stratégie de sauvegarde et sur la reprise d'activités après incident
+  - Pour mettre en place cette stratégie, nous pouvoir utiliser la stratégie 3 2 1 qui implique:
+    - Avoir au moins 3 copie des données dans des endroits différents
+    - Avoir 2 copie sur des supports différents
+    - Avoir 1 copie hors site.
+  Pour mettre en place la stratégie 3 2 1 il faut suivre plusieurs étapes:
+    - Déterminer l'importance et la disponibilités de chaque données (s'assurer des données cruciales pour l'entreprise et du délai d'attente pour lesquels on veux récupérer les données perdus en fonction du coût et des ressources qui auront étés utilisés au déploiement et a la maintenance de celui-ci)
+    - Décider de la fréquence et de la régulation des sauvegardes (cela peut être différentes fréquences selon le type de données ou selon le type de sauvegarde), et bien utiliser des systèmes de sauvegarde versionnés afin de ne pas se retrouver avec une sauvegarde corrompu sans pouvoir revenir à une sauvegarde plus ancienne.
+    - Réfléchir au système de déploiement qui sera mis en oeuvre et à la façon dont les sauvegardes seront effectués (manuelles ou automatique avec un outil)
+    - Bien tester le processus de restauration à l'aide de simulations qui vont reproduire ce qui pourrais se passer en cas de perte des données et ainsi s'assurer que le système de sauvegarde ne mettrais pas en évidence des éventuels problèmes que l'ont aurais pu négliger ou ignorer auparavant 
+
+  #### Recommandations
+ </details>
+
+ <details>
+  <summary>
+
+  ### Click Jacking
+
+ </summary>
+
+  #### Définition
+
+  - Type d'attaque qui consiste en une fausse page web qui inciterai un utilisateur légitime à cliquer sur un lien ou un contenu qui pourrais paraître lui aussi légitime mais qui est en réalité une action qui est effectuée sans son consentement sur d'autres sites 
+  - Utilisés beaucoup avec des iframes invisibles qui vont pointer vers des sites auquel il aurais potentiellement des droits ou une session ouverte.
+  - Pour protéger de ce type d'attaque on peux utiliser plusieurs protection tel que:
+    - Le [Content Security Policy (CSP)](#cont)
+
+  #### Recommandations
+
+- R17 - Utiliser CSP contre le clickjacking 
+  - Il est recommandé de mettre en place une protection contre le détournement de clic en définissant l’attribut CSP frame-ancestors à une liste d’autorisations minimale.
+
+ </details>
+
+<details>
+  <summary>
+  
+  ### Requête silencieuse
+
+ </summary>
+ 
+  #### Définition
+
+  - Permet de demander au navigateur de réaliser des requêtes silencieuse sans devoir executer du code Javascript ou CSS (une balise html qui appellerai un href avec l'attribut ping)
+  - Peut conduire un hacker à cacher a sa victime des connexion silencieuses qui peuvent mener à des fuites de données ou à du DDOS et l'exploitation de failles CSRF
+    
+  ```html
+  <!-- dans la ligne 9 et 10, il y a un lien piégé qui va tenter une attaque CSRF et inciter l'utilisateur à cliquer et ainsi effectuer l'effacement d'un article dont l'id et 123 si jamais l'utilisateur à l'autorisation -->
+    <body>
+      <a href="/actualites" ping="http://banque.fr/virement?vers=bob">Liens vers les actualités</a> |
+      <a href="/meteo" ping="/article/123/delete">Liens vers la météo</a>
+  ```
+
+  #### Recommandations
+- R20 - Réduire l'impact des requêtes silencieuses via CSP
+  - Il est recommandé de définir une CSP limitant les Origins atteignables par le navigateur dans le but de bloquer l’émission de requêtes silencieuses difficiles à maîtriser à cause de la nature de la spécification HTML.
+  
+</details>
+
+ 
+<details>
+  <summary>
+
+  ### Authentification vs Autorisation
+
+ </summary>
+
+  #### Définition
+
+
+  #### Recommandations
+  
+ </details>
 
 ## Notre application
 
