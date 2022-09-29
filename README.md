@@ -448,6 +448,26 @@ d’occurrence de vulnérabilités XSS.
   #### Recommandations
  </details>
 
+ <details>
+  <summary>
+  
+  ### Moindre privilèges
+
+ </summary>
+
+  #### Définition
+
+  - Processus visant à ne donner strictement que des droits nécessaire aux utilisateurs et acteurs dans le système
+  - Réduire le nombre de permission à un strict minimum nécessaire au bon fonctionnement de son rôle sans altérer ou bloquer ses fonctions principales.
+  - Permettra de limiter le risque de compromission des composants et ainsi éviter le risque de destruction des données, de leur vol ou de leur altération.
+  - Pour effectuer cela nous pouvons effectuer plusieurs taches tel que:
+    - Limiter les permission de nos utilisateurs de l'application sur le système de fichier
+    - Limiter les permissions de nos API afin d'empêcher n'importe quel service web ou navigateur à y accéder
+    - Ne pas hésiter à utiliser RBAC afin de créer des rôles selon les besoins et selon le nombre de besoin d'accès aux diverses données et aux différentes permissions par rôles
+
+  #### Recommandations
+ </details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
