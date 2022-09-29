@@ -393,6 +393,21 @@ d’occurrence de vulnérabilités XSS.
 
 </details>
 
+<details>
+  <summary>
+  
+  ### La compromission des ressources
+ 
+  </summary>
+
+  #### Définition
+
+  - Attaque qui vise à s'introduire dans un système, pour en modifier son contenu, introduire du code malveillant, remplacer des contenus et informations légitimes par le contenu choisi par l'attaquant (harcèlement, dénigrer, message politique).
+  - nuit à l'intégrité du service et de leur propriétaire et peut également nuire aux utilisateurs.
+
+  #### Recommandations
+ </details>
+
 ## Notre application
 
 <!-- Ce que l'ont va mettre en place et pour quel raison -->
