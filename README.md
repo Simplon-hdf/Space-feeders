@@ -550,6 +550,28 @@ d’occurrence de vulnérabilités XSS.
 
   #### Recommandations
  </details>
+
+ <details>
+  <summary>
+  
+  ### Requête silencieuse
+
+ </summary>
+ 
+  #### Définition
+
+  - Permet de demander au navigateur de réaliser des requêtes silencieuse sans devoir executer du code Javascript ou CSS (une balise html qui appellerai un href avec l'attribut ping)
+  - Peut conduire un hacker à cacher a sa victime des connexion silencieuses qui peuvent mener à des fuites de données ou à du DDOS et l'exploitation de failles CSRF
+    
+  ```html
+  <!-- dans la ligne 9 et 10, il y a un lien piégé qui va tenter une attaque CSRF et inciter l'utilisateur à cliquer et ainsi effectuer l'effacement d'un article dont l'id et 123 si jamais l'utilisateur à l'autorisation -->
+    <body>
+      <a href="/actualites" ping="http://banque.fr/virement?vers=bob">Liens vers les actualités</a> |
+      <a href="/meteo" ping="/article/123/delete">Liens vers la météo</a>
+  ```
+
+  #### Recommandations
+ </details>
  
 ## Notre application
 
